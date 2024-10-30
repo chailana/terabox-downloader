@@ -3,14 +3,13 @@ import os
 import time
 from pathlib import Path
 from uuid import uuid4
-from pyrogram.enums import ParseMode
 import telethon
 from telethon import Button, TelegramClient, events, utils
 from telethon.events.newmessage import NewMessage
 from telethon.tl.functions.channels import GetMessagesRequest
 from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.patched import Message
-from telethon.tl.types import Document, PraseMode
+from telethon.tl.types import Document
 from telethon.types import UpdateEditMessage
 
 
