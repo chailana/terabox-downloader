@@ -26,7 +26,7 @@ www.terabox.com	FALSE	/	FALSE	1732810300	ndut_fmt	0586AEF9A26CFBB5DC48321B413D3F
 ADMINS = [7170426058]
 
 
-BOT_USERNAME = "anuthing9_bot"
+BOT_USERNAME = "Anuthing9bot"
 
 # Force user to join this channel. (make sure you have promoted the bot on this chat.)
 FORCE_LINK = "@zolekitakagi"
