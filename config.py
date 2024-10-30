@@ -29,6 +29,6 @@ ADMINS = [7170426058]
 BOT_USERNAME = "anuthing9_bot"
 
 # Force user to join this channel. (make sure you have promoted the bot on this chat.)
-FORCE_LINK = "@anime"
+FORCE_LINK = "@zolekitakagi"
 
-PUBLIC_EARN_API = ""  # https://publicearn.com/api
+PUBLIC_EARN_API = "https://publicearn.com/api"  # https://publicearn.com/api
