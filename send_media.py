@@ -3,6 +3,7 @@ import os
 import time
 from pathlib import Path
 from uuid import uuid4
+
 import telethon
 from telethon import Button, TelegramClient, events, utils
 from telethon.events.newmessage import NewMessage
@@ -11,7 +12,6 @@ from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.patched import Message
 from telethon.tl.types import Document
 from telethon.types import UpdateEditMessage
-
 
 from cansend import CanSend
 from config import BOT_USERNAME, PRIVATE_CHAT_ID
@@ -89,7 +89,7 @@ Size: **{self.data["size"]}**
 
         await self.edit_message.edit(
             f"{head_text}\n{progress_bar}\n{speed_line}\n{time_line}\n{size_line}",
-            parse_mode=ParseMode.HTML,
+            parse_mode="markdown",
             buttons=[Button.inline("Stop", data=f"stop{self.uuid}")],
         )
 
@@ -111,7 +111,7 @@ Size: **{self.data["size"]}**
                 caption=self.caption,
                 allow_cache=True,
                 force_document=False,
-                parse_mode=ParseMode.HTML,
+                parse_mode="markdown",
                 reply_to=self.message.id,
                 supports_streaming=True,
                 background=True,
@@ -180,7 +180,7 @@ Size: **{self.data["size"]}**
                         reply_to=self.message.id,
                         allow_cache=True,
                         force_document=False,
-                        parse_mode=ParseMode.HTML,
+                        parse_mode="markdown",
                         supports_streaming=True,
                         thumb=self.thumbnail,
                         # attributes=attributes,
@@ -236,7 +236,7 @@ Size: **{self.data["size"]}**
         try:
             await self.edit_message.edit(
                 f"Sorry! Download Failed but you can download it from [here]({self.data['direct_link']}) or [here]({self.data['link']}).",
-                parse_mode=ParseMode.HTML,
+                parse_mode="markdown",
                 buttons=[Button.url("Download", data=self.data["direct_link"])],
                 
             )
@@ -288,7 +288,7 @@ Size: **{self.data["size"]}**
             pass
         db.set(self.message.sender_id, time.monotonic(), ex=60)
         self.edit_message = await self.message.reply(
-            self.caption2, file=self.thumbnail, parse_mode=ParseMode.HTML
+            self.caption2, file=self.thumbnail, parse_mode="markdown"
         )
         self.task = asyncio.create_task(self.send_media(shorturl))
 
@@ -356,7 +356,7 @@ Size: **{self.data["size"]}**
                     #     Button.url("Group ", url="https://t.me/RoldexVerseChats"),
                     # ],
                 ],
-                parse_mode=ParseMode.HTML,
+                parse_mode="markdown",
             )
             db.set(message.sender_id, time.monotonic(), ex=60)
             db.incr(
