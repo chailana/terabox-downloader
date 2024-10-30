@@ -31,4 +31,4 @@ BOT_USERNAME = "Anuthing9bot"
 # Force user to join this channel. (make sure you have promoted the bot on this chat.)
 FORCE_LINK = "@zolekitakagi"
 
-PUBLIC_EARN_API = "https://publicearn.com/api"  # https://publicearn.com/api
+PUBLIC_EARN_API = "7d12fd740f36a8307901fec1c1b4debd90ced9c3"  # https://publicearn.com/api
