@@ -1,6 +1,6 @@
+from telethon.tl.types import ParseMode
 import logging
 import time
-from pyrogram.enums import ParseMode
 import humanreadable as hr
 from telethon import Button
 from telethon.sync import TelegramClient, events
