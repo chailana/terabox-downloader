@@ -288,7 +288,7 @@ Size: **{self.data["size"]}**
             pass
         db.set(self.message.sender_id, time.monotonic(), ex=60)
         self.edit_message = await self.message.reply(
-            self.caption2, file=self.thumbnail, parse_mode="markdown"
+            self.caption2, file=self.thumbnail, parse_mode=ParseMode.HTML
         )
         self.task = asyncio.create_task(self.send_media(shorturl))
 
