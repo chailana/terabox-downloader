@@ -5,9 +5,9 @@ BOT_TOKEN = "7176424785:AAEusrLtmtGgRisJ6Pje6yAnN-ZbdZMoO1Q"  # bot token
 
 
 # REDIS
-HOST = "localhost"  # redis host uri
-PORT = 6379  # redis port
-PASSWORD = ""  # redis password
+HOST = "redis-16253.c257.us-east-1-3.ec2.redns.redis-cloud.com"  # redis host uri
+PORT = 16253  # redis port
+PASSWORD = "YvHEhzWTOCq3VTg4Cz6HRVR9FDH0e5op"  # redis password
 
 PRIVATE_CHAT_ID = -1001234567890  # CHAT WHERE YOU WANT TO STORE VIDEOS
 # COOKIE FOR AUTHENTICATION (get from chrome dev tools) ex: "PANWEB=1; csrfToken=;
