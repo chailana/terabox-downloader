@@ -1,7 +1,7 @@
 import asyncio
 import logging
 import time
-from pyrogram.enums import ParseMode
+from telethon.tl.types import ParseMode
 import humanreadable as hr
 from telethon.sync import TelegramClient, events
 from telethon.tl.custom.message import Message
