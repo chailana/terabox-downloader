@@ -10,8 +10,9 @@ from telethon.events.newmessage import NewMessage
 from telethon.tl.functions.channels import GetMessagesRequest
 from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.patched import Message
-from telethon.tl.types import Document
+from telethon.tl.types import Document, PraseMode
 from telethon.types import UpdateEditMessage
+
 
 from cansend import CanSend
 from config import BOT_USERNAME, PRIVATE_CHAT_ID
