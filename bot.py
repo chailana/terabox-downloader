@@ -1,4 +1,4 @@
-from telethon.tl.types import ParseMode
+
 import logging
 import time
 import humanreadable as hr
