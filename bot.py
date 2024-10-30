@@ -35,7 +35,7 @@ Let's make your video experience even better!
     await m.reply(
         reply_text,
         link_preview=False,
-        parse_mode=ParseMode.HTML,
+        client.parse_mode='markdown',
         buttons=[
             [
                 Button.url(
@@ -94,7 +94,7 @@ Keep the interactions going smoothly! 😊
     await m.reply(
         text,
         link_preview=False,
-        parse_mode=ParseMode.HTML,
+        client.parse_mode='markdown',
         buttons=[Button.url("Click here To Refresh Token", url=shortenedUrl)],
     )
 
