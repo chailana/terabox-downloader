@@ -3,6 +3,7 @@ flask
 telethon
 cryptg
 pyaes
+pyrogram
 aiohttp
 aiodns
 aiohttp[speedups]
