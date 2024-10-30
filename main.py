@@ -5,7 +5,7 @@ from pyrogram.enums import ParseMode
 import humanreadable as hr
 from telethon.sync import TelegramClient, events
 from telethon.tl.custom.message import Message
-
+from telethon.tl.types import ParseMode
 from config import ADMINS, API_HASH, API_ID, BOT_TOKEN, HOST, PASSWORD, PORT
 from redis_db import db
 from send_media import VideoSender
