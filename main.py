@@ -1,7 +1,7 @@
 import asyncio
 import logging
 import time
-
+from pyrogram.enums import ParseMode
 import humanreadable as hr
 from telethon.sync import TelegramClient, events
 from telethon.tl.custom.message import Message
@@ -42,7 +42,7 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"You are spamming.\n**Please wait {
                 t.to_humanreadable()} and try again.**",
-            parse_mode="markdown",
+            parse_mode=ParseMode.HTML,
         )
     if_token_avl = db.get(f"active_{m.sender_id}")
     if not if_token_avl and m.sender_id not in ADMINS:
@@ -73,7 +73,7 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"Sorry! File is too big.\n**I can download only 500MB and this file is of {
                 data['size']}.**\nRather you can download this file from the link below:\n{data['url']}",
-            parse_mode="markdown",
+            parse_mode=ParseMode.HTML,
         )
 
     sender = VideoSender(
