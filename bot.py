@@ -1,4 +1,3 @@
-
 import logging
 import time
 import humanreadable as hr
@@ -35,23 +34,18 @@ Let's make your video experience even better!
     await m.reply(
         reply_text,
         link_preview=False,
-        client.parse_mode == 'markdown',
+        parse_mode='markdown',  # Fixed usage of parse_mode
         buttons=[
             [
-                Button.url(
-                    "Website Source Code", url="https://github.com/r0ld3x/terabox-app"
-                ),
-                Button.url(
-                    "Bot Source Code",
-                    url="https://github.com/r0ld3x/terabox-downloader-bot",
-                ),
+                Button.url("Website Source Code", url="https://github.com/r0ld3x/terabox-app"),
+                Button.url("Bot Source Code", url="https://github.com/r0ld3x/terabox-downloader-bot"),
             ],
             [
-                Button.url("Channel ", url="https://t.me/RoldexVerse"),
-                Button.url("Group ", url="https://t.me/RoldexVerseChats"),
+                Button.url("Channel", url="https://t.me/RoldexVerse"),
+                Button.url("Group", url="https://t.me/RoldexVerseChats"),
             ],
         ],
-    ) #this is line 54
+    )
 
 
 @bot.on(
@@ -74,10 +68,7 @@ Your session will expire in {t.to_humanreadable()}."""
     shortenedUrl = generate_shortenedUrl(m.sender_id)
     if not shortenedUrl:
         return await m.reply("Something went wrong. Please try again.")
-    # if_token_avl = db.get(f"token_{m.sender_id}")
-    # if not if_token_avl:
-    # else:
-    #     uid, shortenedUrl = if_token_avl.split("|")
+
     text = f"""
 Hey {m.sender.first_name or m.sender.username}!
 
@@ -94,7 +85,7 @@ Keep the interactions going smoothly! 😊
     await m.reply(
         text,
         link_preview=False,
-        client.parse_mode == 'markdown',
+        parse_mode='markdown',  # Fixed usage of parse_mode
         buttons=[Button.url("Click here To Refresh Token", url=shortenedUrl)],
     )
 
@@ -141,14 +132,10 @@ async def start_token(m: Message):
             buttons=[
                 [
                     Button.url("RoldexVerse", url="https://t.me/RoldexVerse"),
-                    Button.url("RoldexVerseChats",
-                               url="https://t.me/RoldexVerseChats"),
+                    Button.url("RoldexVerseChats", url="https://t.me/RoldexVerseChats"),
                 ],
                 [
-                    Button.url(
-                        "ReCheck ♻️",
-                        url=f"https://{BOT_USERNAME}.t.me?start={uuid}",
-                    ),
+                    Button.url("ReCheck ♻️", url=f"https://{BOT_USERNAME}.t.me?start={uuid}"),
                 ],
             ],
         )
