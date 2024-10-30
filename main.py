@@ -1,10 +1,11 @@
 import asyncio
 import logging
 import time
+
 import humanreadable as hr
 from telethon.sync import TelegramClient, events
 from telethon.tl.custom.message import Message
-from telethon.tl.types import ParseMode
+
 from config import ADMINS, API_HASH, API_ID, BOT_TOKEN, HOST, PASSWORD, PORT
 from redis_db import db
 from send_media import VideoSender
@@ -41,7 +42,7 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"You are spamming.\n**Please wait {
                 t.to_humanreadable()} and try again.**",
-            parse_mode=ParseMode.HTML,
+            parse_mode="markdown",
         )
     if_token_avl = db.get(f"active_{m.sender_id}")
     if not if_token_avl and m.sender_id not in ADMINS:
@@ -72,7 +73,7 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"Sorry! File is too big.\n**I can download only 500MB and this file is of {
                 data['size']}.**\nRather you can download this file from the link below:\n{data['url']}",
-            parse_mode=ParseMode.HTML,
+            parse_mode="markdown",
         )
 
     sender = VideoSender(
