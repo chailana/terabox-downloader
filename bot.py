@@ -1,6 +1,6 @@
 import logging
 import time
-
+from pyrogram.enums import ParseMode
 import humanreadable as hr
 from telethon import Button
 from telethon.sync import TelegramClient, events
@@ -35,7 +35,7 @@ Let's make your video experience even better!
     await m.reply(
         reply_text,
         link_preview=False,
-        parse_mode="markdown",
+        parse_mode=ParseMode.HTML,
         buttons=[
             [
                 Button.url(
@@ -94,7 +94,7 @@ Keep the interactions going smoothly! 😊
     await m.reply(
         text,
         link_preview=False,
-        parse_mode="markdown",
+        parse_mode=ParseMode.HTML,
         buttons=[Button.url("Click here To Refresh Token", url=shortenedUrl)],
     )
 
